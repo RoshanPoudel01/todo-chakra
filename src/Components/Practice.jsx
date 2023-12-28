@@ -31,7 +31,7 @@ const Practice = () => {
   const [selectValue, setSelectValue] = useState("");
   const [radioValue, setRadioValue] = useState(1);
   const [click, setClicked] = useState(false);
-  const [editId, setEditId] = useState();
+
   useEffect(() => {}, [click]);
 
   const handleClick = () => {
@@ -64,7 +64,6 @@ const Practice = () => {
       if (item.id === id) {
         setValue(item.item);
         setSelectValue(item.priority);
-        setEditId(item.id);
       }
     });
   };
@@ -153,25 +152,23 @@ const Practice = () => {
                 </Thead>
                 <Tbody>
                   {localStorage.getItem("items") ? (
-                    JSON.parse(localStorage.getItem("items")).map(
-                      (items, index) => (
-                        <Tr key={items.id}>
-                          <Td>{items.id}</Td>
-                          <Td>{items.item}</Td>
-                          <Td>{items.status}</Td>
+                    JSON.parse(localStorage.getItem("items")).map((items) => (
+                      <Tr key={items.id}>
+                        <Td>{items.id}</Td>
+                        <Td>{items.item}</Td>
+                        <Td>{items.status}</Td>
 
-                          <Td>{renderPriority(items.priority)}</Td>
-                          <Td>
-                            <Flex gap={2}>
-                              <Button onClick={() => find(items.id)}>
-                                <CiEdit />
-                              </Button>
-                              <IoTrashBin />
-                            </Flex>
-                          </Td>
-                        </Tr>
-                      )
-                    )
+                        <Td>{renderPriority(items.priority)}</Td>
+                        <Td>
+                          <Flex gap={2}>
+                            <Button onClick={() => find(items.id)}>
+                              <CiEdit />
+                            </Button>
+                            <IoTrashBin />
+                          </Flex>
+                        </Td>
+                      </Tr>
+                    ))
                   ) : (
                     <Center>Nothing to show</Center>
                   )}
