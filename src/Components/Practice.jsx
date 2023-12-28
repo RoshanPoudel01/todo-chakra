@@ -166,7 +166,6 @@ const Practice = () => {
                               <Button onClick={() => find(items.id)}>
                                 <CiEdit />
                               </Button>
-
                               <IoTrashBin />
                             </Flex>
                           </Td>

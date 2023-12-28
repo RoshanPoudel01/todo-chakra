@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
       <Center fontSize="lg" pt={3} color={"GrayText"}>
-        Here
+        Todo
       </Center>
     </>
   );

@@ -1,8 +1,7 @@
-import { ChakraProvider } from '@chakra-ui/react'
-import Header from './Components/Header';
+import { ChakraProvider } from "@chakra-ui/react";
+import Header from "./Components/Header";
 // import {baseTheme} from '@chakra-ui/theme'
-import Practice from './Components/Practice'
-
+import Practice from "./Components/Practice";
 
 // const { Button } = baseTheme.components
 
@@ -16,10 +15,9 @@ function App() {
   return (
     <ChakraProvider>
       <Header />
-      <Practice  />
-    
+      <Practice />
     </ChakraProvider>
-  )
+  );
 }
 
 export default App;
